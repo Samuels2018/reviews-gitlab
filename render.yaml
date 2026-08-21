@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: kc-review-bot
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GITLAB_HOST
+        sync: false
+      - key: GITLAB_TOKEN
+        sync: false
+      - key: GITLAB_REPO
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
+      - key: CHANNEL
+        sync: false
+      - key: RUN_SECRET
+        generateValue: true
